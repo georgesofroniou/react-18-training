@@ -25,7 +25,7 @@ const Book = () => {
 const Image = () => <img src="./images/book1-atomic_habits-james_clear.jpg" alt="Atomic Habits"/>;
 const Title = () => <h2>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h2>;
 const Author = () => {
-    return <h4>James Clear</h4>
+    return <h4>James Clear</h4>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
