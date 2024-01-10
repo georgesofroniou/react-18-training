@@ -1,56 +1,87 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-import './index.css'
+import './index.css';
 
 // const title = 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones';
 // const alt = 'Atomic Habits';
 // const author = 'James Clear';
 // const img = './images/book1-atomic_habits-james_clear.jpg';
 
-const firstBook = {
-  author: 'James Clear',
-  title:
-    'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
-  img: './images/book1-atomic_habits-james_clear.jpg',
-  alt: 'Atomic Habits',
-}
-const secondBook = {
-  author: 'Rick Rubin',
-  title: 'The Creative Act: A Way of Being',
-  img: './images/book2-the_creative_act-rick_rubin.jpg',
-  alt: 'The Creative Act',
-}
+// const firstBook = {
+//   author: 'James Clear',
+//   title:
+//     'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
+//   img: './images/book1-atomic_habits-james_clear.jpg',
+//   alt: 'Atomic Habits',
+// };
+// const secondBook = {
+//   author: 'Rick Rubin',
+//   title: 'The Creative Act: A Way of Being',
+//   img: './images/book2-the_creative_act-rick_rubin.jpg',
+//   alt: 'The Creative Act',
+// };
 
-function BookList() {
-  return (
-    <section className="book-list">
-      <Book
-        author={firstBook.author}
-        title={firstBook.title}
-        img={firstBook.img}
-        alt={firstBook.alt}
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          molestiae explicabo nam ullam, quae doloribus quos consectetur vel
-          repudiandae rem cumque architecto cum necessitatibus.
-        </p>
-        <button>Click Me</button>
-      </Book>
-      <Book
-        author={secondBook.author}
-        title={secondBook.title}
-        img={secondBook.img}
-        alt={secondBook.alt}
-      />
-    </section>
-  )
-}
+const books = [
+  {
+    author: 'James Clear',
+    title:
+      'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
+    img: './images/book1-atomic_habits-james_clear.jpg',
+    alt: 'Atomic Habits',
+  },
+  {
+    author: 'Rick Rubin',
+    title: 'The Creative Act: A Way of Being',
+    img: './images/book2-the_creative_act-rick_rubin.jpg',
+    alt: 'The Creative Act',
+  },
+];
+
+
+const BookList = () => {
+    return (
+        <section className="book-list">
+            {books.map((book) => {
+                console.log(book);
+                const {img, title, author, alt, children} = book;
+                return (
+                    <Book img={img} title={title} author={author} />
+                );
+            })}
+        </section>
+    );
+};
+
+// const BookList = () => {
+//   return (
+//     <section className="book-list">
+//       <Book
+//         author={firstBook.author}
+//         title={firstBook.title}
+//         img={firstBook.img}
+//         alt={firstBook.alt}
+//       >
+//         <p>
+//           Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+//           molestiae explicabo nam ullam, quae doloribus quos consectetur vel
+//           repudiandae rem cumque architecto cum necessitatibus.
+//         </p>
+//         <button>Click Me</button>
+//       </Book>
+//       <Book
+//         author={secondBook.author}
+//         title={secondBook.title}
+//         img={secondBook.img}
+//         alt={secondBook.alt}
+//       />
+//     </section>
+//   )
+// };
 
 const Book = (props) => {
   console.log(props)
-  const { img, title, author, alt, children } = props
+  const { img, title, author, alt, children } = props;
 
   return (
     <article className="book">
@@ -59,8 +90,8 @@ const Book = (props) => {
       <h4>{author} </h4>
       {children}
     </article>
-  )
-}
+  );
+};
 
 // const Book = (props) => {
 //     console.log(props);
@@ -99,6 +130,6 @@ const Book = (props) => {
 //     return <h4>James Clear</h4>;
 // };
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<BookList />)
+root.render(<BookList />);
