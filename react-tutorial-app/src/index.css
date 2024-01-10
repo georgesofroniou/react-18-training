@@ -37,12 +37,16 @@ body {
     object-fit: cover;
 }
 .book h2 {
+    width: 296px;
     margin-top: 1rem;
+    overflow: hidden;
     font-size: 1rem;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 }
 .book h4 {
-    color: #617d98;
     margin-top: 0.5rem;
     font-size: 0.75rem;
     letter-spacing: 2px;
+    color: #617d98;
 }
