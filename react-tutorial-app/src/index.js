@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-import './index.css';
+import './index.css'
 
 // const title = 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones';
 // const alt = 'Atomic Habits';
@@ -9,50 +9,58 @@ import './index.css';
 // const img = './images/book1-atomic_habits-james_clear.jpg';
 
 const firstBook = {
-    author:'James Clear',
-    title:'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
-    img:'./images/book1-atomic_habits-james_clear.jpg',
-    alt:'Atomic Habits',
-};
+  author: 'James Clear',
+  title:
+    'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
+  img: './images/book1-atomic_habits-james_clear.jpg',
+  alt: 'Atomic Habits',
+}
 const secondBook = {
-    author: 'Rick Rubin',
-    title: 'The Creative Act: A Way of Being',
-    img: './images/book2-the_creative_act-rick_rubin.jpg',
-    alt: 'The Creative Act',
-};
+  author: 'Rick Rubin',
+  title: 'The Creative Act: A Way of Being',
+  img: './images/book2-the_creative_act-rick_rubin.jpg',
+  alt: 'The Creative Act',
+}
 
 function BookList() {
-    return (
-        <section className='book-list'>
-            <Book 
-                author={firstBook.author}
-                title={firstBook.title}
-                img={firstBook.img}
-                alt={firstBook.alt} 
-            />
-            <Book 
-                author={secondBook.author}
-                title={secondBook.title}
-                img={secondBook.img}
-                alt={secondBook.alt}
-            />
-        </section>
-    );
+  return (
+    <section className="book-list">
+      <Book
+        author={firstBook.author}
+        title={firstBook.title}
+        img={firstBook.img}
+        alt={firstBook.alt}
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+          molestiae explicabo nam ullam, quae doloribus quos consectetur vel
+          repudiandae rem cumque architecto cum necessitatibus.
+        </p>
+        <button>Click Me</button>
+      </Book>
+      <Book
+        author={secondBook.author}
+        title={secondBook.title}
+        img={secondBook.img}
+        alt={secondBook.alt}
+      />
+    </section>
+  )
 }
 
 const Book = (props) => {
-    
-    console.log(props);
-    const { img, title, author, alt } = props;
+  console.log(props)
+  const { img, title, author, alt, children } = props
 
-    return (
-        <article className='book'>
-            <img src={img} alt={alt} />
-            <h2>{title}</h2>
-            <h4>{author} </h4>
-        </article>
-    );
-};
+  return (
+    <article className="book">
+      <img src={img} alt={alt} />
+      <h2>{title}</h2>
+      <h4>{author} </h4>
+      {children}
+    </article>
+  )
+}
 
 // const Book = (props) => {
 //     console.log(props);
@@ -66,7 +74,7 @@ const Book = (props) => {
 // };
 
 // const Book = () => {
-    
+
 //     return (
 //         <article className='book'>
 //             <img src={img} alt={alt}/>
@@ -76,7 +84,7 @@ const Book = (props) => {
 //     );
 
 // };
-  
+
 // const Book = () => {
 //     return <article className='book'>
 //         <Image />
@@ -91,6 +99,6 @@ const Book = (props) => {
 //     return <h4>James Clear</h4>;
 // };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 
-root.render(<BookList />);
+root.render(<BookList />)
