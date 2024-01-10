@@ -17,10 +17,11 @@ function BookList() {
 const Book = () => {
     const title = 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones';
     const author = 'James Clear';
+    const img = './images/book1-atomic_habits-james_clear.jpg';
 
     return (
         <article className='book'>
-            <img src='./images/book1-atomic_habits-james_clear.jpg' alt='Atomic Habits'/>
+            <img src={img} alt={title}/>
             <h2>{title}</h2>
             <h4>{author.toUpperCase()}</h4>
         </article>
