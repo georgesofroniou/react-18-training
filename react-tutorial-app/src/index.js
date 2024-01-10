@@ -22,7 +22,7 @@ const Book = () => {
     </article>
 };
 
-const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T1/images/I/81YkqyaFVEL._AC_UL900_SR900,600_.jpg" alt="Atomic Habits"/>;
+const Image = () => <img src="./images/book1-atomic_habits-james_clear.jpg" alt="Atomic Habits"/>;
 const Title = () => <h2>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h2>;
 const Author = () => {
     return <h4>James Clear</h4>
