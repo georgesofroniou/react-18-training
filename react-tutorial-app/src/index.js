@@ -3,25 +3,6 @@ import ReactDOM from 'react-dom/client';
 
 import './index.css';
 
-// const title = 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones';
-// const alt = 'Atomic Habits';
-// const author = 'James Clear';
-// const img = './images/book1-atomic_habits-james_clear.jpg';
-
-// const firstBook = {
-//   author: 'James Clear',
-//   title:
-//     'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
-//   img: './images/book1-atomic_habits-james_clear.jpg',
-//   alt: 'Atomic Habits',
-// };
-// const secondBook = {
-//   author: 'Rick Rubin',
-//   title: 'The Creative Act: A Way of Being',
-//   img: './images/book2-the_creative_act-rick_rubin.jpg',
-//   alt: 'The Creative Act',
-// };
-
 const books = [
   {
     author: 'James Clear',
@@ -29,106 +10,42 @@ const books = [
       'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
     img: './images/book1-atomic_habits-james_clear.jpg',
     alt: 'Atomic Habits',
+    id: 1,
   },
   {
     author: 'Rick Rubin',
     title: 'The Creative Act: A Way of Being',
     img: './images/book2-the_creative_act-rick_rubin.jpg',
     alt: 'The Creative Act',
+    id: 2,
   },
 ];
 
 
 const BookList = () => {
-    return (
-        <section className="book-list">
-            {books.map((book) => {
-                console.log(book);
-                const {img, title, author, alt, children} = book;
-                return (
-                    <Book img={img} title={title} author={author} />
-                );
-            })}
-        </section>
-    );
-};
-
-// const BookList = () => {
-//   return (
-//     <section className="book-list">
-//       <Book
-//         author={firstBook.author}
-//         title={firstBook.title}
-//         img={firstBook.img}
-//         alt={firstBook.alt}
-//       >
-//         <p>
-//           Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-//           molestiae explicabo nam ullam, quae doloribus quos consectetur vel
-//           repudiandae rem cumque architecto cum necessitatibus.
-//         </p>
-//         <button>Click Me</button>
-//       </Book>
-//       <Book
-//         author={secondBook.author}
-//         title={secondBook.title}
-//         img={secondBook.img}
-//         alt={secondBook.alt}
-//       />
-//     </section>
-//   )
-// };
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        return <Book {...book} key={book.id} />;
+      })}
+    </section>
+  );
+}
 
 const Book = (props) => {
-  console.log(props)
-  const { img, title, author, alt, children } = props;
+
+  const { img, title, author, alt, id } = props;
+  console.log(props);
 
   return (
-    <article className="book">
+    <article className='book'>
       <img src={img} alt={alt} />
       <h2>{title}</h2>
       <h4>{author} </h4>
-      {children}
+      <h5>ID: {id}</h5>
     </article>
   );
 };
-
-// const Book = (props) => {
-//     console.log(props);
-//     return (
-//         <article className='book'>
-//             <img src={props.img} alt={props.alt} />
-//             <h2>{props.title}</h2>
-//             <h4>{props.author} </h4>
-//         </article>
-//     );
-// };
-
-// const Book = () => {
-
-//     return (
-//         <article className='book'>
-//             <img src={img} alt={alt}/>
-//             <h2>{title}</h2>
-//             <h4>{author.toUpperCase()}</h4>
-//         </article>
-//     );
-
-// };
-
-// const Book = () => {
-//     return <article className='book'>
-//         <Image />
-//         <Title />
-//         <Author />
-//     </article>
-// };
-
-// const Image = () => <img src="./images/book1-atomic_habits-james_clear.jpg" alt="Atomic Habits"/>;
-// const Title = () => <h2>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h2>;
-// const Author = () => {
-//     return <h4>James Clear</h4>;
-// };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
