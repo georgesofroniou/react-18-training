@@ -23,16 +23,47 @@ const books = [
 
 
 const BookList = () => {
+  const someValue = 'shakeAndBake';
+
+  const displayValue = () => {
+    console.log(someValue);
+  };
+
   return (
     <section className='booklist'>
-    <EventExamples />
       {books.map((book) => {
-        return <Book {...book} key={book.id} />;
+        return <Book {...book} key={book.id} displayValue={displayValue} />;
       })}
     </section>
   );
 }
 
+
+
+const Book = (props) => {
+
+  const { img, title, author, alt, id, displayValue } = props;
+  // console.log(props);
+
+  return (
+    <article className='book'>
+      <img src={img} alt={alt} />
+      <h2>{title}</h2>
+      <button onClick={displayValue}>Click Me</button>
+      <h4>{author} </h4>
+      <h5>ID: {id}</h5>
+    </article>
+  );
+};
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(<BookList />);
+
+
+
+/* Events commented out
 const EventExamples = () => {
 
   const handleFormInput = (e) => {
@@ -70,22 +101,4 @@ const EventExamples = () => {
   );
 };
 
-const Book = (props) => {
-
-  const { img, title, author, alt, id } = props;
-  console.log(props);
-
-  return (
-    <article className='book'>
-      <img src={img} alt={alt} />
-      <h2>{title}</h2>
-      <h4>{author} </h4>
-      <h5>ID: {id}</h5>
-    </article>
-  );
-};
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(<BookList />);
+*/
